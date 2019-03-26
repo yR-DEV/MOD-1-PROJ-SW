@@ -10,14 +10,13 @@ def puts_shows(shows)
 end
 
 def get_shows
-  puts "fuck"
-    sql = "SELECT * FROM shows"
-    puts ActiveRecord::Base.connection.execute(sql)
+  puts Artist.get_artists
+
 end
 
-puts "Enter shows to see upcoming shows:"
+puts "Enter artists to see upcoming shows they are in:"
 response = gets.chomp
-  if response == "shows"
+  if response == "artists"
     get_shows()
   end
 
