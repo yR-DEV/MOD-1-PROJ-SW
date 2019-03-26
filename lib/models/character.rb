@@ -1,3 +1,4 @@
 class Character < ActiveRecord::Base
-  # serialize :starships
+  serialize :starships
+  has_many :movies, through: :character_movies
 end
