@@ -8,4 +8,11 @@ class Artist < ActiveRecord::Base
     SQL
     ActiveRecord::Base.connection.execute(sql)
   end
+
+  def self.get_one_artist(artist_name)
+    sql = <<-SQL
+      SELECT * FROM artists where name = ?
+    SQL
+    ActiveRecord::Base.connection.execute(sql, artist_name)
+  end
 end

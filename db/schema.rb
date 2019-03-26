@@ -18,16 +18,17 @@ ActiveRecord::Schema.define(version: 20190326165052) do
     t.string "venue"
   end
 
-  create_table "venues", force: :cascade do |t|
-    t.string "name"
-    t.string "date"
-    t.string "time"
-  end
-
   create_table "shows", force: :cascade do |t|
     t.integer "venue_id"
     t.integer "artist_id"
     t.index ["artist_id"], name: "index_shows_on_artist_id"
     t.index ["venue_id"], name: "index_shows_on_venue_id"
   end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "name"
+    t.string "date"
+    t.string "time"
+  end
+
 end

@@ -1,9 +1,9 @@
 require_relative '../lib/models/artist.rb'
 require_relative '../lib/models/show.rb'
 require_relative '../lib/models/venue.rb'
-
+#
 #Venue = artist date time
-Venue.create(name: "Paramount Theatre-colorado", date: "2019-03-26", time: "20:00:00")
+Venue.create(name: "Paramount Theatre", date: "2019-03-26", time: "20:00:00")
 Venue.create(name: "Summit Music Hall", date: "2019-03-26", time: "19:00:00")
 Venue.create(name: "Larimer Lounge", date: "2019-03-26", time: "20:00:00")
 Venue.create(name: "Bluebird Theater", date: "2019-03-26", time: "19:00:00")
