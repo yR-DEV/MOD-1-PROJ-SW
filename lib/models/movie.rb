@@ -1,2 +1,3 @@
 class Movie < ActiveRecord::Base
+  serialize :characters, :starships #not sure if this syntax is correct? Or if it will work...
 end
