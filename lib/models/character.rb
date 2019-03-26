@@ -1,3 +1,3 @@
 class Character < ActiveRecord::Base
-  serialize :starships
+  # serialize :starships
 end

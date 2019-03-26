@@ -4,7 +4,7 @@ class CreateCharactersTable < ActiveRecord::Migration[5.0]
       table.string :name
       table.integer :height
       table.string :species
-      table.array :starships
+      table.text :starships
     end
   end
 end
