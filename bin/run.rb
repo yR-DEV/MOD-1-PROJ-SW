@@ -1,6 +1,6 @@
 require_relative '../config/environment'
 
-def get_shows
+def get_artists
   puts Artist.get_artists
 end
 
@@ -15,7 +15,7 @@ end
 puts "Enter artists to see upcoming shows they are in:"
 response = gets.chomp
 if response == "artists"
-  get_shows()
+  get_artists()
 elsif response == "venues"
   get_venues()
 elsif response == "shows"
