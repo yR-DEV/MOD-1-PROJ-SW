@@ -1,4 +1,10 @@
+#R E A D M E
 
+###User stories
+1. As a user, I want to know all the artists playing local shows in Denver within the next few days
+2. As a user, I want to know the venues that have live shows in Denver within the next few days
+3. As a user, I want to know what artist will be at what venue
+4. As a user, I want to know which show has the most populat artist
 
 <!-- # Module One Final Project Guidelines
 
