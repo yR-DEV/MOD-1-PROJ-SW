@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20190326165052) do
 
   create_table "artists", force: :cascade do |t|
     t.string  "name"
-    t.integer "popularity"
+    t.float "popularity"
     t.string  "venue"
   end
 

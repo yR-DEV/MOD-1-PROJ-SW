@@ -2,11 +2,21 @@ require_relative '../lib/models/artist.rb'
 require_relative '../lib/models/show.rb'
 require_relative '../lib/models/venue.rb'
 
+#Venue = artist date time
+Venue.new(name: "Paramount Theatre-colorado", date: "2019-03-26", time: "20:00:00")
+Venue.new(name: "Summit Music Hall", date: "2019-03-26", time: "19:00:00")
+Venue.new(name: "Larimer Lounge", date: "2019-03-26", time: "time": "20:00:00")
+Venue.new(name: "Bluebird Theater", date: "2019-03-26", time: "19:00:00")
 
+#artists
+Artist.create(name: "Dream Theater", popularity: 0.056429, venue: "Paramount Theater")
+Artist.create(name: "A Boogie Wit da Hoodie", popularity: 0.086217, venue: "Summit Music Hall")
+Artist.create(name: "Mat Kerekes, Jetty Bones, Jacob Sigman", popularity: 0.0019269, venue: "Larimer Lounge")
+Artist.create(name: "Copeland, From Indian Lakes", popularity: 0.015775, venue: "Bluebird Theater")
 
-
-
-# {
+# "date": "2019-03-26",
+# "datetime": "2019-03-26T19:00:00-0600",
+# "time": "19:00:00"
 # "resultsPage": {
 # "status": "ok",
 # "results": {
@@ -67,7 +77,7 @@ require_relative '../lib/models/venue.rb'
 # "lat": 39.73804,
 # "lng": -105.02652
 # }
-# },
+####################################################
 # {
 # "id": 36217014,
 # "displayName": "A Boogie Wit da Hoodie at Summit Music Hall (March 26, 2019)",
@@ -124,7 +134,7 @@ require_relative '../lib/models/venue.rb'
 # "lat": 39.75351,
 # "lng": -104.99532
 # }
-# },
+# },#################################################################
 # {
 # "id": 36268804,
 # "displayName": "Mat Kerekes with Jetty Bones and Jacob Sigman at Larimer Lounge (March 26, 2019)",
@@ -210,7 +220,7 @@ require_relative '../lib/models/venue.rb'
 # "lat": 39.75993,
 # "lng": -104.9838
 # }
-# },
+# },################################################################################################
 # {
 # "id": 36275499,
 # "displayName": "Copeland with From Indian Lakes and Many Rooms at Bluebird Theater (March 26, 2019)",
