@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20190326165052) do
 
   create_table "artists", force: :cascade do |t|
-    t.string  "name"
-    t.float "popularity"
-    t.string  "venue"
+    t.string "name"
+    t.float  "popularity"
+    t.string "venue"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20190326165052) do
   end
 
   create_table "venues", force: :cascade do |t|
-    t.string "artist"
-    t.string "date_of_show"
-    t.string "time_of_show"
+    t.string "name"
+    t.string "date"
+    t.string "time"
   end
 
 end

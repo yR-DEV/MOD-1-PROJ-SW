@@ -14,8 +14,13 @@ end
 namespace :db do
   desc 'migrate changs to db'
   task :migrate => :environment do
-    Artists.create_table
+    Artist.create_table
     Venue.create_table
     Show.create_table
-  end 
+  end
+
+  desc 'seeding the database with dummy data'
+  task :seed do
+    require_relative './db/seeds.rb'
+  end
 end
