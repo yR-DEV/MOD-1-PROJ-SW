@@ -8,4 +8,11 @@ class Venue < ActiveRecord::Base
     SQL
     ActiveRecord::Base.connection.execute(sql)
   end
+
+  def self.get_all_venue_shows(venue)
+    sql = <<-SQL
+      SELECT * FROM venues WHERE id = ?
+    SQL
+    ActiveRecord::Base.connection.execute(sql, venue.venue_id)
+  end
 end

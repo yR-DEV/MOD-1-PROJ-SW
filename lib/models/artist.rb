@@ -2,11 +2,13 @@ class Artist < ActiveRecord::Base
   has_many :shows
   has_many :venues, through: :shows
 
-  def self.get_artists
+  def self.get_all_artists
     sql = <<-SQL
       SELECT * FROM artists
     SQL
-    ActiveRecord::Base.connection.execute(sql)
+    ActiveRecord::Base.connection.execute(sql).map do |artist|
+      puts artist["name"]
+    end
   end
 
   def self.get_one_artist(artist_name)

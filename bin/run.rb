@@ -35,7 +35,7 @@ end
 puts "Enter artists to see upcoming shows they are in:"
 response = gets.chomp
 if response == "artists"
-  get_all_the_artists()
+  Artist.get_all_artists()
 elsif response == "venues"
   get_all_the_venues()
 elsif response == "shows"
