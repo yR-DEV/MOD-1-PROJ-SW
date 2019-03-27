@@ -3,16 +3,16 @@ require_relative '../config/environment'
 require 'pry'
 
 # binding.pry
+#
+# def get_all_the_artists
+#   Artist.get_artists.map do |artist|
+#     puts artist["name"]
+#   end
+# end
 
-def get_all_the_artists
-  Artist.get_artists.map do |artist|
-    puts artist["name"]
-  end
-end
-
-def get_single_artist
-  get_all_the_artist_shows(Artist.get_one_artist[0])
-end
+# def get_single_artist
+#   get_all_the_artist_shows(Artist.get_one_artist[0])
+# end
 
 def get_all_the_venues
   Venue.get_venues.map do |venue|
@@ -29,13 +29,32 @@ def get_all_the_artist_shows(artist)
 end
 
 
+binding.pry
 
 
-
-puts "Enter artists to see upcoming shows they are in:"
+puts "Enter artists to see upcoming shows they are in,\n
+      Enter venues to see venues with upcoming shows,\n
+      Shows to see specific shows date, time, and location:\n"
 response = gets.chomp
 if response == "artists"
-  Artist.get_all_artists()
+  Artist.all.select do |artist|
+    puts artist["name"]
+    artist
+  end
+
+  puts "\nEnter specific artist(s) to see the show information:"
+  artist_prompt = gets.chomp
+  Artist.all.find do |artist|
+    if artist["name"] == artist_prompt
+      show = Show.all.find_by(artist_id: artist["id"])
+      venue = Venue.find(show["venue_id"])
+      puts venue["name"]
+    end
+  end
+
+  # Artist.find
+  # Artist.get_one_artist_show(artist_prompt)
+  # Show.get_show_by_artist(artist_prompt)
 elsif response == "venues"
   get_all_the_venues()
 elsif response == "shows"
