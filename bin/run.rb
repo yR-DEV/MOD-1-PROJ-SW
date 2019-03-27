@@ -1,6 +1,6 @@
 require_relative '../config/environment'
-
 require 'pry'
+require 'colored'
 
 binding.pry
 
