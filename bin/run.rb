@@ -49,14 +49,14 @@ if response == "artists"
       show = Show.all.find_by(artist_id: artist["id"])
       venue = Venue.find(show["venue_id"])
       puts venue["name"]
+      puts venue["date"]
+      puts venue["time"]
     end
   end
-
-  # Artist.find
-  # Artist.get_one_artist_show(artist_prompt)
-  # Show.get_show_by_artist(artist_prompt)
 elsif response == "venues"
   get_all_the_venues()
 elsif response == "shows"
   get_all_the_artist_shows("this should come out in terminal")
+else
+  puts "Input not recognized. Please try artists, venues, shows"
 end
