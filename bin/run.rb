@@ -44,6 +44,7 @@ if response == "artists"
 
   puts "\nEnter specific artist(s) to see the show information:"
   artist_prompt = gets.chomp
+
   Artist.all.find do |artist|
     if artist["name"] == artist_prompt
       show = Show.all.find_by(artist_id: artist["id"])
@@ -53,6 +54,7 @@ if response == "artists"
       puts venue["time"]
     end
   end
+  
 elsif response == "venues"
   get_all_the_venues()
 elsif response == "shows"
