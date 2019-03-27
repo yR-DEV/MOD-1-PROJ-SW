@@ -2,22 +2,23 @@ class Artist < ActiveRecord::Base
   has_many :shows
   has_many :venues, through: :shows
 
-  def self.get_artists
-    sql = <<-SQL
-      SELECT * FROM artists
-    SQL
-    ActiveRecord::Base.connection.execute(sql)
-  end
-
   def self.get_all_artists
-    get_artists.map do |artist|
+    self.all.select do |artist|
       puts artist["name"]
     end
   end
 
-  def self.get_one_artist_show(artist_prompt)
-    single_artist = get_artists.map {|artist| artist if artist["name"] == artist_prompt}
-    # puts single_artist[2]
-    Show.get_show_by_artist(single_artist[2])
+  def self.get_one_artist(artist_prompt)
+    self.all.find do |artist|
+      if artist["name"] == artist_prompt
+        show = Show.all.find_by(artist_id: artist["id"])
+        venue = Venue.find(show["venue_id"])
+        puts "=====SHOW======"
+        puts venue["name"]
+        puts venue["date"]
+        puts venue["time"]
+        puts "=============="
+      end
+    end
   end
 end
