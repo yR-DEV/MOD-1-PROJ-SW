@@ -32,6 +32,7 @@ class CLI
 
     else
       puts "Input not recognized. Please try artists, venues, shows"
+      self.main_menu
     end
 
   end
