@@ -8,18 +8,16 @@ class Artist < ActiveRecord::Base
     end
   end
 
-  def self.get_one_artist(artist_prompt, type)
+  def self.get_one_artist(artist_prompt)
     self.all.find do |artist|
       if artist["name"] == artist_prompt
         show = Show.all.find_by(artist_id: artist["id"])
         venue = Venue.find(show["venue_id"])
-        if type =="show"
-          puts "\n=====SHOW======"
-          puts venue["name"]
-          puts venue["date"]
-          puts venue["time"]
-          puts "=============="
-        end
+        puts "\n=====SHOW======"
+        puts venue["name"]
+        puts venue["date"]
+        puts venue["time"]
+        puts "=============="
       end
     end
   end

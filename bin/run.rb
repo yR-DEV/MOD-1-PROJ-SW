@@ -4,7 +4,6 @@ require 'pry'
 
 binding.pry
 
-
 puts "Enter artists to see upcoming shows they are in,\n
       Enter venues to see venues with upcoming shows,\n
       Enter hottest shows to see the most popular artist and show location/information:\n"
@@ -14,7 +13,7 @@ if response == "artists"
   Artist.get_all_artists
   puts "\nEnter specific artist(s) to see the show information:"
   artist_prompt = gets.chomp
-  Artist.get_one_artist(artist_prompt, "show")
+  Artist.get_one_artist(artist_prompt)
 
 elsif response == "venues"
   Venue.get_all_venues
