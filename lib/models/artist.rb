@@ -13,11 +13,11 @@ class Artist < ActiveRecord::Base
       if artist["name"] == artist_prompt
         show = Show.all.find_by(artist_id: artist["id"])
         venue = Venue.find(show["venue_id"])
-        puts "\n=====SHOW======"
-        puts venue["name"]
-        puts venue["date"]
-        puts venue["time"]
-        puts "=============="
+        puts "\n=====SHOW======".bold.yellow
+        puts venue["name"].red
+        puts venue["date"].red
+        puts venue["time"].red
+        puts "==============".bold.yellow
       end
     end
   end
@@ -27,11 +27,11 @@ class Artist < ActiveRecord::Base
       if artist.popularity == most_popular
         show = Show.all.find_by(artist_id: artist["id"])
         venue = Venue.all.find(show["artist_id"])
-        puts "\n===== #{artist["name"]} ====="
-        puts venue["name"]
-        puts venue["date"]
-        puts venue["time"]
-        puts "========================="
+        puts "\n===== #{artist["name"]} =====".bold.yellow
+        puts venue["name"].red
+        puts venue["date"].red
+        puts venue["time"].red
+        puts "=========================".bold.yellow
      end
    end
  end
