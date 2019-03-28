@@ -26,7 +26,7 @@ class CLI
 
   def self.main_menu
     puts "Enter 'artists' to see upcoming shows they are in,\nEnter 'venues' to see venues with upcoming shows,\nEnter 'hottest show' to see the most popular artist and show location/information:".bold.green
-
+    puts "Enter 'quit' to exit application.".bold.green
     @@response = gets.chomp
 
     if @@response == "artists"
@@ -50,6 +50,9 @@ class CLI
       most_popular = most_popular.sort!.reverse.first
       Artist.get_most_popular_artist(most_popular)
       self.return_or_quit
+
+    elsif @@response == "quit"
+      self.quit
 
     else
       puts "Input not recognized. Please try typing 'artists', 'venues', or 'shows'".red.bold
