@@ -11,9 +11,11 @@ class CLI
     response = gets.chomp
     if response == "return"
       self.main_menu
-    else
+    elsif response == "quit"
       puts "Goodbye!".green.bold
       self.quit
+    else
+      self.return_or_quit
     end
   end
 
