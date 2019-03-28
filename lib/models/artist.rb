@@ -31,7 +31,7 @@ class Artist < ActiveRecord::Base
         puts venue["name"].red
         puts venue["date"].red
         puts venue["time"].red
-        puts "=========================".bold.yellow
+        puts "==================================".bold.yellow
      end
    end
  end
