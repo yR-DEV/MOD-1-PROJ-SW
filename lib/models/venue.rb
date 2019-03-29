@@ -13,7 +13,7 @@ class Venue < ActiveRecord::Base
       if venue["name"] == venue_prompt
         show = Show.all.find_by(venue_id: venue["id"])
         artist = Artist.find(show["artist_id"])
-        puts "\n====VENUE======".bold.yellow
+        puts "\n====SHOW======".bold.yellow
         puts artist["name"].red
         puts venue["date"].red
         puts venue["time"].red
