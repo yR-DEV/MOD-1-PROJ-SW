@@ -37,10 +37,6 @@ class CLI
 
   end
 
-
-
-
-
 self.main_menu
 end
 
